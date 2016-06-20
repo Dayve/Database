@@ -1,0 +1,51 @@
+<!DOCTYPE html >
+<html lang="pl-PL">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Wirtualny dziekanat - Wyszukiwanie i dodawanie</title>
+	</head>
+	<body>
+		<h1>Wirtualny dziekanat - Wyszukiwanie i dodawanie</h1>
+		
+		<h2>Wyszukiwanie studenta:</h2>
+		<p>Aby nie uwzględniać danej kolumny proszę pozostawić pole puste.<p/>
+		<form method="post" action="search_results.php">
+			<label>Imię:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Nazwisko:</label> <input type="text" name="studentForm[]"> <br>
+			<label>PESEL:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Kierunek:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Grupa:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Status:</label> 
+			<select name="studentForm[]" > <br>
+				<option value="ANY">-- Dowolny --</option>
+				<option value="zawieszony">Zawieszony</option>
+				<option value="skreslony">Skreślony z listy studentów</option>
+				<option value="studiuje">Studiuje</option>
+				<option value="dlug kredytowy">Dług kredytowy</option>
+				<option value="urlop">Urlop dziekański</option>
+			</select>
+			<br>
+			<button type="submit" name="studentSearch">Wyszukaj</button>
+		</form>
+		
+		<h2>Dodawanie studenta:</h2>
+		<p>Wszystkie pola muszą zostać wypełnione.<p/>
+		<form method="post" action="adding.php">
+			<label>PESEL:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Imię:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Nazwisko:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Kierunek:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Grupa:</label> <input type="text" name="studentForm[]"> <br>
+			<label>Status:</label>
+			<select name="studentForm[]"> <br>
+				<option value="zawieszony">Zawieszony</option>
+				<option value="skreslony">Skreślony z listy studentów</option>
+				<option value="studiuje">Studiuje</option>
+				<option value="dlug kredytowy">Dług kredytowy</option>
+				<option value="urlop">Urlop dziekański</option>
+			</select>
+			<br>
+			<button type="submit" name="studentAdd">Dodaj</button>
+		</form>
+	</body>
+</html>

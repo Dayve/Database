@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html lang="pl-PL">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Wirtualny dziekanat - Wyszukiwanie i dodawanie</title>
+	</head>
+	<body>
+		<h1>Wirtualny dziekanat - Wyszukiwanie i dodawanie</h1>
+		
+		<h2>Wyszukiwanie zajęć:</h2>
+		<p>Aby nie uwzględniać danej kolumny proszę pozostawić pole puste.<p/>
+		<form method="post" action="search_results.php">
+			<label>Godzina:</label> <input type="text" name="classForm[]"> <br>
+			<label>Numer sali:</label> <input type="text" name="classForm[]"> <br>
+			<label>Dzień tygodnia:</label>
+			<select name="classForm[]"> <br>
+				<option value="ANY">-- Dowolny --</option>
+				<option value="pon">Poniedziałek</option>
+				<option value="wt">Wtorek</option>
+				<option value="sr">Środa</option>
+				<option value="czw">Czwartek</option>
+				<option value="pt">Piątek</option>
+				<option value="sob">Sobota</option>
+				<option value="nd">Niedziela</option>
+			</select>
+			<br>
+			<button type="submit" name="classSearch">Wyszukaj</button>
+		</form>
+		
+		<h2>Dodawanie zajęć:</h2>
+		<p>Wszystkie pola muszą zostać wypełnione.<p/>
+		<form method="post" action="adding.php">
+			<label>Godzina:</label> <input type="text" name="classForm[]"> <br>
+			<label>Numer sali:</label> <input type="text" name="classForm[]"> <br>
+			<label>Dzień tygodnia:</label>
+			<select name="classForm[]"> <br>
+				<option value="pon">Poniedziałek</option>
+				<option value="wt">Wtorek</option>
+				<option value="sr">Środa</option>
+				<option value="czw">Czwartek</option>
+				<option value="pt">Piątek</option>
+				<option value="sob">Sobota</option>
+				<option value="nd">Niedziela</option>
+			</select>
+			<br>
+			<label>ID Typu zajec:</label> <input type="text" name="classForm[]"> <br>
+			<label>ID Prowadzacego:</label> <input type="text" name="classForm[]"> <br>
+			<label>ID Przedmiotu:</label> <input type="text" name="classForm[]"> <br>
+			<button type="submit" name="classAdd">Dodaj</button>
+		</form>
+	</body>
+</html>

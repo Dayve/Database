@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html lang="pl-PL">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Wirtualny dziekanat - Wyszukiwanie i dodawanie</title>
+	</head>
+	<body>
+		<h1>Wirtualny dziekanat - Wyszukiwanie i dodawanie</h1>
+		
+		<h2>Wyszukiwanie przedmiotu:</h2>
+		<p>Aby nie uwzględniać danej kolumny proszę pozostawić pole puste.<p/>
+		<form method="post" action="search_results.php">
+			<label>Nazwa:</label> <input type="text" name="subjectForm[]"> <br>
+			<label>ECTS:</label> <input type="text" name="subjectForm[]"> <br>
+			<label>Sposób zaliczenia:</label>
+			<select name="subjectForm[]"> <br>
+				<option value="ANY">-- Dowolny --</option>
+				<option value="zaliczenie">Zaliczenie</option>
+				<option value="egzamin">Egzamin</option>
+			</select>
+			<br>
+			<label>Semestr:</label> <input type="text" name="subjectForm[]"> <br>
+			<button type="submit" name="subjectSearch">Wyszukaj</button>
+		</form>
+				
+		<h2>Dodawanie przedmiotu:</h2>
+		<p>Wszystkie pola muszą zostać wypełnione.<p/>
+		<form method="post" action="adding.php">
+			<label>Nazwa:</label> <input type="text" name="subjectForm[]"> <br>
+			<label>ECTS:</label> <input type="text" name="subjectForm[]"> <br>
+			<label>Sposób zaliczenia:</label>
+			<select name="subjectForm[]"> <br>
+				<option value="zaliczenie">Zaliczenie</option>
+				<option value="egzamin">Egzamin</option>
+			</select>
+			<br>
+			<label>Semestr:</label> <input type="text" name="subjectForm[]"> <br>
+			<label>Typ:</label>
+			<select name="subjectForm[]"> <br>
+				<option value="Obieralny">Obieralny</option>
+				<option value="Podstawowy">Podstawowy</option>
+				<option value="Kierunkowy">Kierunkowy</option>
+			</select>
+			<br>
+			<label>Ilość godzin:</label> <input type="text" name="subjectForm[]"> <br>
+			<button type="submit" name="subjectAdd">Dodaj</button>
+		</form>
+	</body>
+</html>
