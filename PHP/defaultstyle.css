@@ -1,0 +1,22 @@
+	body {
+		background-color: #FFA500;
+		font-family: calibri;
+	}
+	INPUT { 
+		background-color: #F4A460;
+		border-color: #F4A460;
+		color: black;
+		font-family: calibri;
+		font-weight: bold;
+		font-size: 12pt;
+		width: 10em;  height: 2em;
+	}
+	label { display: block; width: 200px; }
+	button {
+		background-color: #B8860B;
+		border-color:#B8860B;
+	}
+	option {
+		background-color: #B8860B;
+		border-color:#B8860B;
+	}
