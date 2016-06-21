@@ -1,11 +1,11 @@
 body {
-	background-color: #FFA500;
+	background-color: #00BFFF;
 	font-family: calibri;
 }
 
 input { 
-	background-color: #F4A460;
-	border-color: #F4A460;
+	background-color: #1E90FF;
+	border-color: #1E90FF;
 	color: black;
 	font-family: calibri;
 	font-weight: bold;
@@ -18,14 +18,14 @@ label {
 }
 
 button {
-	background-color: #B8860B;
-	border-color:#B8860B;
+	background-color: #1E90FF;
+	border-color:#1E90FF;
 	width: 140px;
 }
 
 option {
-	background-color: #B8860B;
-	border-color:#B8860B;
+	background-color: #1E90FF;
+	border-color:#1E90FF;
 	width: 140px;
 }
 
