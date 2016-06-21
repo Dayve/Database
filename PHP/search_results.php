@@ -2,6 +2,7 @@
 <html lang="pl-PL">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="defaultstyle.css" media="screen" />
 		<title>Wirtualny dziekanat - Wyniki wyszukiwania</title>
 	</head>
 	<body>
@@ -34,19 +35,21 @@
 						}
 					}
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
 					if(! $queryResult) die('Nie można pobrać danych.');
 					
 					$rowsNumber = $queryResult->num_rows;
 					
+					echo '<table>';
+					echo '<tr><td>Imie</td><td>Nazwisko</td><td>PESEL</td><td>Kierunek</td><td>Grupa</td><td>Status</td></tr>';
 					for($i=0 ; $i<$rowsNumber ; ++$i) {
 						$queryResult->data_seek($i);
 						$row = $queryResult->fetch_array(MYSQLI_ASSOC);
-						
-						echo 'STUDENT: '.$row['Imie'].' '.$row['Nazwisko'].' '.$row['PESEL'].' KIERUNEK: '.$row['Kierunek'].' GRUPA: '.$row['Grupa'].' STATUS: '.$row['Status'].'<br>';		
+						echo '<tr><td>'.$row['Imię'].'</td><td>'.$row['Nazwisko'].'</td><td>'.$row['PESEL'].'</td><td>'.$row['Kierunek'].'</td><td>'.$row['Grupa'].'</td><td>'.$row['Status'].'</td></tr>';		
 					}
+					echo '</table>';
 					
 					$queryResult->close();
 				}
@@ -61,23 +64,24 @@
 						}
 					}
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
 					if(! $queryResult) die('Nie można pobrać danych.');
 					
 					$rowsNumber = $queryResult->num_rows;
 					
+					echo '<table>';
+					echo '<tr><td>Tytul</td><td>Imie</td><td>Nazwisko</td></tr>';
 					for($i=0 ; $i<$rowsNumber ; ++$i) {
 						$queryResult->data_seek($i);
 						$row = $queryResult->fetch_array(MYSQLI_ASSOC);
-						
-						echo 'PROWADZĄCY: '.$row['Tytul'].' '.$row['Imie'].' '.$row['Nazwisko'].'<br>';		
+						echo '<tr><td>'.$row['Tytuł'].'</td><td>'.$row['Imię'].'</td><td>'.$row['Nazwisko'].'</td></tr>';
 					}
+					echo '</table>';
 					
 					$queryResult->close();
 				}
-
 				else if(isset($_POST['gradeSearch'])) {
 					$sqlQuery = "select * from ocenakoncowa";
 					$fieldsInOrder = array("Wartosc", "DataWystawienia"); // Order as in corresponding html form
@@ -89,19 +93,21 @@
 						}
 					}
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
 					if(! $queryResult) die('Nie można pobrać danych.');
 					
 					$rowsNumber = $queryResult->num_rows;
 					
+					echo '<table>';
+					echo '<tr><td>Wartość</td><td>Data Wystawienia</td><td>Numer Albumu</td><td>ID Przedmiotu</td></tr>';
 					for($i=0 ; $i<$rowsNumber ; ++$i) {
 						$queryResult->data_seek($i);
 						$row = $queryResult->fetch_array(MYSQLI_ASSOC);
-						
-						echo 'OCENA: '.$row['Wartosc'].' '.$row['DataWystawienia'].' Numer albumu: '.$row['NumerAlbumu'].' ID Przedmiotu: '.$row['ID_Przedmiotu'].'<br>';		
+						echo '<tr><td>'.$row['Wartosc'].'</td><td>'.$row['DataWystawienia'].'</td><td>'.$row['NumerAlbumu'].'</td><td>'.$row['ID_Przedmiotu'].'</td></tr>';
 					}
+					echo '</table>';
 					
 					$queryResult->close();
 				}
@@ -116,19 +122,22 @@
 						}
 					}
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
 					if(! $queryResult) die('Nie można pobrać danych.');
 					
 					$rowsNumber = $queryResult->num_rows;
 					
+					echo '<table>';
+					echo '<tr><td>Nazwa</td><td>ECTS</td><td>Sposób Zaliczenia</td><td>Semestr</td><td>ID Typu Przedmiotu</td></tr>';		
 					for($i=0 ; $i<$rowsNumber ; ++$i) {
 						$queryResult->data_seek($i);
 						$row = $queryResult->fetch_array(MYSQLI_ASSOC);
-						
-						echo 'PRZEDMIOT: '.$row['Nazwa'].' ECTS: '.$row['ECTS'].' '.$row['SposobZaliczenia'].' SEMESTR: '.$row['Semestr'].' ID Typu przedmiotu: '.$row['ID_TypuPrzedmiotu'].'<br>';		
+			
+						echo '<tr><td>'.$row['Nazwa'].'</td><td>'.$row['ECTS'].'</td><td>'.$row['SposobZaliczenia'].'</td><td>'.$row['Semestr'].'</td><td>'.$row['ID_TypuPrzedmiotu'].'</td></tr>';
 					}
+					echo '</table>';
 					
 					$queryResult->close();
 				}
@@ -143,19 +152,22 @@
 						}
 					}
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
 					if(! $queryResult) die('Nie można pobrać danych.');
 					
 					$rowsNumber = $queryResult->num_rows;
 					
+					echo '<table>';
+					echo '<tr><td>Godzina</td><td>Numer Sali</td><td>Dzień Tygodnia</td><td>ID Typu Zajęć</td><td>ID Prowadzacego</td><td>ID Przedmiotu</td></tr>';
 					for($i=0 ; $i<$rowsNumber ; ++$i) {
 						$queryResult->data_seek($i);
 						$row = $queryResult->fetch_array(MYSQLI_ASSOC);
 						
-						echo 'ZAJĘCIA: '.$row['Godzina'].' '.$row['NumerSali'].' '.$row['DzienTygodnia'].' ID_TypuZajec: '.$row['ID_TypuZajec'].' ID_Prowadzacego: '.$row['ID_Prowadzacego'].' ID_Przedmiotu: '.$row['ID_Przedmiotu'].'<br>';		
+						echo '<tr><td>'.$row['Godzina'].'</td><td>'.$row['NumerSali'].'</td><td>'.$row['DzienTygodnia'].'</td><td>'.$row['ID_TypuZajec'].'</td><td>'.$row['ID_Prowadzacego'].'</td><td>'.$row['ID_Przedmiotu'].'</td></tr>';
 					}
+					echo '</table>';
 					
 					$queryResult->close();
 				}

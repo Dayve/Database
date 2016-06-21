@@ -2,6 +2,7 @@
 <html lang="pl-PL">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="defaultstyle.css" media="screen" />
 		<title>Wirtualny dziekanat - Potwierdzenie dodania wpisu</title>
 	</head>
 	<body>
@@ -14,7 +15,6 @@
 			$conn = new mysqli($hostname, $username, $pw, $DBname);
 			
 			if($conn->connect_error) die($conn->connect_error);
-			
 			
 			// Add a new row:
 			if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -35,10 +35,11 @@
 					}
 					$sqlQuery .= ")";
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
-					if(! $queryResult) die('Nie można wywołać procedury');
+					if(! $queryResult) die('Nie można wywołać procedury.');
+					else echo 'Dodano studenta do bazy danych.';
 				}
 				else if(isset($_POST['tutorAdd'])) {
 					$sqlQuery = "call dodajProwadzacego(";		// Query for calling the procedure
@@ -57,10 +58,11 @@
 					}
 					$sqlQuery .= ")";
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
-					if(! $queryResult) die('Nie można wywołać procedury');
+					if(! $queryResult) die('Nie można wywołać procedury.');
+					else echo 'Dodano prowadzącego do bazy danych.';
 				}
 				else if(isset($_POST['gradeAdd'])) {
 					$sqlQuery = "call dodajOceneKoncowa(";		// Query for calling the procedure
@@ -79,10 +81,11 @@
 					}
 					$sqlQuery .= ")";
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
-					if(! $queryResult) die('Nie można wywołać procedury');
+					if(! $queryResult) die('Nie można wywołać procedury.');
+					else echo 'Dodano ocenę końcową do bazy danych.';
 				}
 				else if(isset($_POST['subjectAdd'])) {
 					$sqlQuery = "call dodajPrzedmiot(";				// Query for calling the procedure
@@ -101,10 +104,11 @@
 					}
 					$sqlQuery .= ")";
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
-					if(! $queryResult) die('Nie można wywołać procedury');
+					if(! $queryResult) die('Nie można wywołać procedury.');
+					else echo 'Dodano przedmiot do bazy danych.';
 				}
 				else if(isset($_POST['classAdd'])) {
 					$sqlQuery = "call dodajZajecia(";			// Query for calling the procedure
@@ -123,10 +127,11 @@
 					}
 					$sqlQuery .= ")";
 					
-					echo 'QUERY: '.$sqlQuery.'<br>'; // Remove after testing
+					// echo 'Wynikowe zapytanie: '.$sqlQuery.'<br>'; // Remove after testing
 				
 					$queryResult = $conn->query($sqlQuery);
-					if(! $queryResult) die('Nie można wywołać procedury');
+					if(! $queryResult) die('Nie można wywołać procedury.');
+					else echo 'Dodano zajęcia do bazy danych.';
 				}
 			}
 			

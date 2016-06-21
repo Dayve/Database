@@ -1,0 +1,47 @@
+body {
+	background-color: #FFA500;
+	font-family: calibri;
+}
+
+input { 
+	background-color: #F4A460;
+	border-color: #F4A460;
+	color: black;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: 12pt;
+	width: 14em;  height: 2em;
+}
+
+label {
+	display: block; width: 200px;
+}
+
+button {
+	background-color: #B8860B;
+	border-color:#B8860B;
+	width: 140px;
+}
+
+option {
+	background-color: #B8860B;
+	border-color:#B8860B;
+	width: 140px;
+}
+
+table {
+	width: 70%;
+}
+
+table, th, td {
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+	padding: 4px;
+}
+
+tr:first-child td {
+    font-weight: bold;
+}
