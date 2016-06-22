@@ -1,6 +1,6 @@
 <?php
 	$hostname = 'localhost';
 	$username = 'root';
-	$DBname = 'projekt';
+	$DBname = 'wirtualny_dziekanat';
 	$pw = '';
 ?>
